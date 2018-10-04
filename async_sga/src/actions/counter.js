@@ -1,4 +1,4 @@
-import { INCREMENT,INCREMENT_ASYNC,PHOTOS_ASYNC } from '../constans/counter'
+import { INCREMENT,INCREMENT_ASYNC,PHOTOS_ASYNC,DECREMENT } from '../constans/counter'
 export const increment = () => {
     return {
         type: INCREMENT
@@ -14,5 +14,11 @@ export const incrementAsync = () => {
 export const photosAsync = () => {
     return {
         type: PHOTOS_ASYNC
+    }
+}
+
+export const decrement =() => {
+    return {
+        type: DECREMENT
     }
 }

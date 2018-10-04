@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import { increment, incrementAsync, photosAsync } from './actions/counter'
+import { increment, incrementAsync, photosAsync, decrement } from './actions/counter'
 
 class App extends Component {
   render() {
@@ -13,6 +13,8 @@ class App extends Component {
         <button onClick={ this.props.incrementAsync }>async +</button>
         <br/>
         <button onClick={ this.props.photosAsync }>async photos</button>
+        <br/>
+        <button onClick={ this.props.decrement }>-</button>
       </div>
     );
   }
@@ -20,4 +22,4 @@ class App extends Component {
 
 const mapStateToProps = (state) => state
 
-export default connect(mapStateToProps, {increment, incrementAsync, photosAsync})(App)
+export default connect(mapStateToProps, {increment, incrementAsync, photosAsync,decrement})(App)
