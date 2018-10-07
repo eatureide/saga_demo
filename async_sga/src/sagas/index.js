@@ -9,13 +9,24 @@ function* incrementAsync() {
 }
 
 function* photosAsync() {
-    const response = yield axios.get('http://jsonplaceholder.typicode.com/photos')
-    console.log(response)
-    yield put({type :PHOTOS, response})
+    try{
+        const response = yield axios.get('http://jsonplaceholder.typicode.com/photos')
+        yield put({type :PHOTOS, response})
+    }catch{
+        console.log('error')
+    }
 }
 
+axios.post('/h5/cardMsg/index', 'orderId:198')
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
 export function* helloSaga(){
+    
     yield takeEvery(INCREMENT_ASYNC, incrementAsync)
     yield takeEvery(PHOTOS_ASYNC, photosAsync)
 }
-
